@@ -35,7 +35,7 @@ void gpio_irq_handler(uint gpio, uint32_t events)
 {
   reset_usb_boot(0, 0);
 }
-
+void Codigo_cores(float Res, ssd1306_t c);//protótipo de função que imprime código de cores no display 
 int main()
 {
   // Para ser utilizado o modo BOOTSEL com botão B
@@ -95,17 +95,175 @@ int main()
     //  Atualiza o conteúdo do display com animações
     ssd1306_fill(&ssd, !cor);                          // Limpa o display
     ssd1306_rect(&ssd, 3, 3, 122, 60, cor, !cor);      // Desenha um retângulo
-    ssd1306_line(&ssd, 3, 25, 123, 25, cor);           // Desenha uma linha
-    ssd1306_line(&ssd, 3, 37, 123, 37, cor);           // Desenha uma linha
-    ssd1306_draw_string(&ssd, "CEPEDI   TIC37", 8, 6); // Desenha uma string
-    ssd1306_draw_string(&ssd, "EMBARCATECH", 20, 16);  // Desenha uma string
-    ssd1306_draw_string(&ssd, "  Ohmimetro", 10, 28);  // Desenha uma string
-    ssd1306_draw_string(&ssd, "ADC", 13, 41);          // Desenha uma string
-    ssd1306_draw_string(&ssd, "Resisten.", 50, 41);    // Desenha uma string
-    ssd1306_line(&ssd, 44, 37, 44, 60, cor);           // Desenha uma linha vertical
+    ssd1306_draw_string(&ssd, "Ohmimetro", 25, 5); // Desenha uma string
+    ssd1306_line(&ssd, 3, 13, 123, 13, cor);           // Desenha uma linha
+    //ssd1306_draw_string(&ssd, "EMBARCATECH", 20, 16);  // Desenha uma string
+    //ssd1306_draw_string(&ssd, "  Ohmimetro", 10, 28);  // Desenha uma string
+    ssd1306_draw_string(&ssd, "ADC", 13, 44);          // Desenha uma string
+    ssd1306_draw_string(&ssd, "Resisten.", 50, 44);    // Desenha uma string
+    ssd1306_draw_string(&ssd, "Fx 1.", 5, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&ssd, "Fx 2.", 5, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&ssd, "Mul .", 5, 34);    // Desenha uma string (multiplicador)
+    ssd1306_line(&ssd, 3, 42, 123, 42, cor);           // Desenha uma linha
+    ssd1306_line(&ssd, 3, 24, 123, 24, cor);           // Desenha uma linha
+    ssd1306_line(&ssd, 3, 33, 123, 33, cor);           // Desenha uma linha
+    ssd1306_line(&ssd, 44, 13, 44, 60, cor);           // Desenha uma linha vertical
     ssd1306_draw_string(&ssd, str_x, 8, 52);           // Desenha uma string
     ssd1306_draw_string(&ssd, str_y, 59, 52);          // Desenha uma string
     ssd1306_send_data(&ssd);                           // Atualiza o display
     sleep_ms(700);
+  }
+}
+void Codigo_cores(float Res, ssd1306_t c){//Função para saber qual resistor corrspondente e24
+  float erro;//variáveis para considerar erro de 5%
+  erro=Res*0.05;
+  if((Res>(510-erro)) && (Res<(510+erro))){
+    ssd1306_draw_string(&c, "Verde", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Marron", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Marron", 47, 34);    // Desenha uma string (multiplicador)
+  }else if((Res>(560-erro)) && (Res<(560+erro))){
+    ssd1306_draw_string(&c, "Verde", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Azul", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Marron", 47, 34);    // Desenha uma string (multiplicador)
+  }else if((Res>(620-erro)) && (Res<(620+erro))){
+    ssd1306_draw_string(&c, "Azul", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Vermelho", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Marron", 47, 34);    // Desenha uma string (multiplicador)
+  }else if((Res>(680-erro)) && (Res<(680+erro))){
+    ssd1306_draw_string(&c, "Azul", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Cinza", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Marron", 47, 34);    // Desenha uma string (multiplicador)  
+  }else if((Res>(750-erro)) && (Res<(750+erro))){
+    ssd1306_draw_string(&c, "Violeta", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Verde", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Marron", 47, 34);    // Desenha uma string (multiplicador)
+  }else if((Res>(820-erro)) && (Res<(820+erro))){
+    ssd1306_draw_string(&c, "Cinza", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Vermelho", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Marron", 47, 34);    // Desenha uma string (multiplicador)
+  }else if((Res>(910-erro)) && (Res<(910+erro))){
+    ssd1306_draw_string(&c, "Branco", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Marron", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Marron", 47, 34);    // Desenha uma string (multiplicador)
+  }else if((Res>(1000-erro)) && (Res<(1000+erro))){
+    ssd1306_draw_string(&c, "Marron", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Preto", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
+  }else if((Res>(1100-erro)) && (Res<(1100+erro))){
+    ssd1306_draw_string(&c, "Marron", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Marron", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
+  }else if((Res>(1200-erro)) && (Res<(1200+erro))){
+    ssd1306_draw_string(&c, "Marron", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Vermelho", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
+  }else if((Res>(1300-erro)) && (Res<(1300+erro))){
+    ssd1306_draw_string(&c, "Marron", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Laranja", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
+  }else if((Res>(1500-erro)) && (Res<(1500+erro))){
+    ssd1306_draw_string(&c, "Marron", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Verde", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
+  }else if((Res>(1600-erro)) && (Res<(1600+erro))){
+    ssd1306_draw_string(&c, "Marron", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Azul", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
+  }else if((Res>(1800-erro)) && (Res<(1800+erro))){
+    ssd1306_draw_string(&c, "Marron", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Cinza", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
+  }else if((Res>(2000-erro)) && (Res<(2000+erro))){
+    ssd1306_draw_string(&c, "Vermelho", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Preto", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
+  }else if((Res>(2200-erro)) && (Res<(2200+erro))){
+    ssd1306_draw_string(&c, "Vermelho", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Vermelho", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
+  }else if((Res>(2400-erro)) && (Res<(2400+erro))){
+    ssd1306_draw_string(&c, "Vermelho", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Amarelo", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
+  }else if((Res>(2700-erro)) && (Res<(2700+erro))){
+    ssd1306_draw_string(&c, "Vermelho", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Preto", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
+  }else if((Res>(3000-erro)) && (Res<(3000+erro))){
+
+  }else if((Res>(3300-erro)) && (Res<(3300+erro))){
+
+  }else if((Res>(3600-erro)) && (Res<(3600+erro))){
+
+  }else if((Res>(3900-erro)) && (Res<(3900+erro))){
+
+  }else if((Res>(4300-erro)) && (Res<(4300+erro))){
+
+  }else if((Res>(4700-erro)) && (Res<(4700+erro))){
+
+  }else if((Res>(5100-erro)) && (Res<(5100+erro))){
+
+  }else if((Res>(5600-erro)) && (Res<(5600+erro))){
+
+  }else if((Res>(6200-erro)) && (Res<(6200+erro))){
+
+  }else if((Res>(6800-erro)) && (Res<(6800+erro))){
+
+  }else if((Res>(7500-erro)) && (Res<(7500+erro))){
+
+  }else if((Res>(8200-erro)) && (Res<(8200+erro))){
+
+  }else if((Res>(9100-erro)) && (Res<(9100+erro))){
+
+  }else if((Res>(10000-erro)) && (Res<(10000+erro))){
+
+  }else if((Res>(11000-erro)) && (Res<(11000+erro))){
+
+  }else if((Res>(12000-erro)) && (Res<(12000+erro))){
+
+  }else if((Res>(13000-erro)) && (Res<(13000+erro))){
+
+  }else if((Res>(15000-erro)) && (Res<(15000+erro))){
+
+  }else if((Res>(16000-erro)) && (Res<(16000+erro))){
+
+  }else if((Res>(18000-erro)) && (Res<(18000+erro))){
+
+  }else if((Res>(20000-erro)) && (Res<(20000+erro))){
+
+  }else if((Res>(22000-erro)) && (Res<(22000+erro))){
+
+  }else if((Res>(24000-erro)) && (Res<(24000+erro))){
+
+  }else if((Res>(27000-erro)) && (Res<(27000+erro))){
+
+  }else if((Res>(30000-erro)) && (Res<(30000+erro))){
+
+  }else if((Res>(33000-erro)) && (Res<(33000+erro))){
+
+  }else if((Res>(36000-erro)) && (Res<(36000+erro))){
+
+  }else if((Res>(39000-erro)) && (Res<(39000+erro))){
+
+  }else if((Res>(43000-erro)) && (Res<(43000+erro))){
+
+  }else if((Res>(47000-erro)) && (Res<(47000+erro))){
+
+  }else if((Res>(51000-erro)) && (Res<(51000+erro))){
+
+  }else if((Res>(56000-erro)) && (Res<(56000+erro))){
+
+  }else if((Res>(62000-erro)) && (Res<(62000+erro))){
+
+  }else if((Res>(68000-erro)) && (Res<(68000+erro))){
+
+  }else if((Res>(75000-erro)) && (Res<(75000+erro))){
+
+  }else if((Res>(82000-erro)) && (Res<(82000+erro))){
+
+  }else if((Res>(91000-erro)) && (Res<(91000+erro))){
+
+  }else if((Res>(100000-erro)) && (Res<(100000+erro))){
+
   }
 }
