@@ -187,83 +187,159 @@ void Codigo_cores(float Res, ssd1306_t c){//Função para saber qual resistor co
     ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(2700-erro)) && (Res<(2700+erro))){
     ssd1306_draw_string(&c, "Vermelho", 47, 16);    // Desenha uma string (faixa 1)
-    ssd1306_draw_string(&c, "Preto", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Violeta", 47, 25);    // Desenha uma string (faixa 2)
     ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(3000-erro)) && (Res<(3000+erro))){
-
+    ssd1306_draw_string(&c, "Laranja", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Preto", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(3300-erro)) && (Res<(3300+erro))){
-
+    ssd1306_draw_string(&c, "laranja", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Laranja", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(3600-erro)) && (Res<(3600+erro))){
-
+    ssd1306_draw_string(&c, "Laranja", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Azul", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(3900-erro)) && (Res<(3900+erro))){
-
+    ssd1306_draw_string(&c, "Laranja", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Branco", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(4300-erro)) && (Res<(4300+erro))){
-
+    ssd1306_draw_string(&c, "Amarelo", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Laranja", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(4700-erro)) && (Res<(4700+erro))){
-
+    ssd1306_draw_string(&c, "Amarelo", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Violeta", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(5100-erro)) && (Res<(5100+erro))){
-
+    ssd1306_draw_string(&c, "Verde", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Marron", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(5600-erro)) && (Res<(5600+erro))){
-
+    ssd1306_draw_string(&c, "Verde", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Azul", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(6200-erro)) && (Res<(6200+erro))){
-
+    ssd1306_draw_string(&c, "Azul", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Vemelho", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(6800-erro)) && (Res<(6800+erro))){
-
+    ssd1306_draw_string(&c, "Azul", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Cinza", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(7500-erro)) && (Res<(7500+erro))){
-
+    ssd1306_draw_string(&c, "Violeta", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Verde", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(8200-erro)) && (Res<(8200+erro))){
-
+    ssd1306_draw_string(&c, "Cinza", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Vemelho", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(9100-erro)) && (Res<(9100+erro))){
-
+    ssd1306_draw_string(&c, "Branco", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Marron", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Vermelho", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(10000-erro)) && (Res<(10000+erro))){
-
+    ssd1306_draw_string(&c, "Marron", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Preto", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(11000-erro)) && (Res<(11000+erro))){
-
+    ssd1306_draw_string(&c, "Marron", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Marron", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(12000-erro)) && (Res<(12000+erro))){
-
+    ssd1306_draw_string(&c, "Marron", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Vermelho", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(13000-erro)) && (Res<(13000+erro))){
-
+    ssd1306_draw_string(&c, "Marron", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Laranja", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(15000-erro)) && (Res<(15000+erro))){
-
+    ssd1306_draw_string(&c, "Marron", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Verde", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(16000-erro)) && (Res<(16000+erro))){
-
+    ssd1306_draw_string(&c, "Marron", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Azul", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(18000-erro)) && (Res<(18000+erro))){
-
+    ssd1306_draw_string(&c, "Marron", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Cinza", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(20000-erro)) && (Res<(20000+erro))){
-
+    ssd1306_draw_string(&c, "Vermelho", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Preto", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(22000-erro)) && (Res<(22000+erro))){
-
+    ssd1306_draw_string(&c, "Vermelho", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Vermelho", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(24000-erro)) && (Res<(24000+erro))){
-
+    ssd1306_draw_string(&c, "Vermelho", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Amarelo", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(27000-erro)) && (Res<(27000+erro))){
-
+    ssd1306_draw_string(&c, "Vermelho", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Violeta", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(30000-erro)) && (Res<(30000+erro))){
-
+    ssd1306_draw_string(&c, "Laranja", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Preto", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(33000-erro)) && (Res<(33000+erro))){
-
+    ssd1306_draw_string(&c, "Laranja", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Laranja", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(36000-erro)) && (Res<(36000+erro))){
-
+    ssd1306_draw_string(&c, "Laranja", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Azul", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(39000-erro)) && (Res<(39000+erro))){
-
+    ssd1306_draw_string(&c, "Laranja", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Branco", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(43000-erro)) && (Res<(43000+erro))){
-
+    ssd1306_draw_string(&c, "Amarelo", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Laranja", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(47000-erro)) && (Res<(47000+erro))){
-
+    ssd1306_draw_string(&c, "Amarelo", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Violeta", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(51000-erro)) && (Res<(51000+erro))){
-
+    ssd1306_draw_string(&c, "Verde", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Marron", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(56000-erro)) && (Res<(56000+erro))){
-
+    ssd1306_draw_string(&c, "Verde", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Azul", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(62000-erro)) && (Res<(62000+erro))){
-
+    ssd1306_draw_string(&c, "Azul", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Vermelho", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(68000-erro)) && (Res<(68000+erro))){
-
+    ssd1306_draw_string(&c, "Azul", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Cinza", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(75000-erro)) && (Res<(75000+erro))){
-
+    ssd1306_draw_string(&c, "Violeta", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Verde", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(82000-erro)) && (Res<(82000+erro))){
-
+    ssd1306_draw_string(&c, "Cinza", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Vermelho", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(91000-erro)) && (Res<(91000+erro))){
-
+    ssd1306_draw_string(&c, "Branco", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Marron", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Laranja", 47, 34);    // Desenha uma string (multiplicador)
   }else if((Res>(100000-erro)) && (Res<(100000+erro))){
-
+    ssd1306_draw_string(&c, "Marron", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Preto", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Amarelo", 47, 34);    // Desenha uma string (multiplicador)
   }
 }
