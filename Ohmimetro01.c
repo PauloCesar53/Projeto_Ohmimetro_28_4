@@ -110,12 +110,13 @@ int main()
     ssd1306_line(&ssd, 44, 13, 44, 60, cor);           // Desenha uma linha vertical
     ssd1306_draw_string(&ssd, str_x, 8, 52);           // Desenha uma string
     ssd1306_draw_string(&ssd, str_y, 59, 52);          // Desenha uma string
+    Codigo_cores(R_x, ssd);//Calcula as cores correspondentes da resistência Considerando a série E24
     ssd1306_send_data(&ssd);                           // Atualiza o display
     sleep_ms(700);
   }
 }
 void Codigo_cores(float Res, ssd1306_t c){//Função para saber qual resistor corrspondente e24
-  float erro;//variáveis para considerar erro de 5%
+  float erro;//considerar erro de 5% para Série E24
   erro=Res*0.05;
   if((Res>(510-erro)) && (Res<(510+erro))){
     ssd1306_draw_string(&c, "Verde", 47, 16);    // Desenha uma string (faixa 1)
@@ -341,5 +342,9 @@ void Codigo_cores(float Res, ssd1306_t c){//Função para saber qual resistor co
     ssd1306_draw_string(&c, "Marron", 47, 16);    // Desenha uma string (faixa 1)
     ssd1306_draw_string(&c, "Preto", 47, 25);    // Desenha uma string (faixa 2)
     ssd1306_draw_string(&c, "Amarelo", 47, 34);    // Desenha uma string (multiplicador)
+  }else{
+    ssd1306_draw_string(&c, "Fora E24", 47, 16);    // Desenha uma string (faixa 1)
+    ssd1306_draw_string(&c, "Fora E24", 47, 25);    // Desenha uma string (faixa 2)
+    ssd1306_draw_string(&c, "Fora E24", 47, 34);    // Desenha uma string (multiplicador)
   }
 }
