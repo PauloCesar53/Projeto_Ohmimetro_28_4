@@ -21,7 +21,6 @@
 #define I2C_SCL 15
 #define endereco 0x3C
 #define ADC_PIN 28 // GPIO para o voltímetro
-#define Botao_A 5  // GPIO para botão A
 
 int R_conhecido = 10000;   // Resistor de 10k ohm
 float R_x = 0.0;           // Resistor desconhecido
@@ -45,10 +44,6 @@ int main()
   gpio_set_irq_enabled_with_callback(botaoB, GPIO_IRQ_EDGE_FALL, true, &gpio_irq_handler);
   // Aqui termina o trecho para modo BOOTSEL com botão B
 
-  gpio_init(Botao_A);
-  gpio_set_dir(Botao_A, GPIO_IN);
-  gpio_pull_up(Botao_A);
-
   // I2C Initialisation. Using it at 400Khz.
   i2c_init(I2C_PORT, 400 * 1000);
 
@@ -69,7 +64,6 @@ int main()
   adc_gpio_init(ADC_PIN); // GPIO 28 como entrada analógica
 
   float tensao;
-  //char str_x[5]; // Buffer para armazenar a string
   char str_y[5]; // Buffer para armazenar a string
 
   bool cor = true;
@@ -90,7 +84,6 @@ int main()
 
     sprintf(str_y, "%1.0f", R_x);   // Converte o float em string
 
-    // cor = !cor;
     //  Atualiza o conteúdo do display com animações
     ssd1306_fill(&ssd, !cor);                          // Limpa o display
     ssd1306_rect(&ssd, 3, 3, 122, 60, cor, !cor);      // Desenha um retângulo
